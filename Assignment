@@ -1,0 +1,65 @@
+1.
+
+Create database student;
+use student
+
+CREATE TABLE Parents (parent_id INT PRIMARY KEY, parents_name VARCHAR(100),city VARCHAR(100),age INT,annual_income INT, occupation VARCHAR(100), email_id VARCHAR(100));
+insert into Parents (parent_id, parents_name,,age ,annual_income, occupation , email_id) values
+    (1, 'Jason', 'Thane', 54, 750000, 'Accountant', 'jason@gmail.com'),
+    (2, 'Sara ali', 'Mulund', 35, 850000, 'Engineer', 'sara@gmail.com'),
+    (3, 'Manish', 'Chinchpokali', 45, 650000, 'Teacher', 'manish@gmail.com'),
+    (4, 'john’, 'Mumbai', 39, 550000, 'Nurse', 'john@gmail.com'),
+    (5, 'David verma', 'Ghatkoper', 42, 900000, 'Manager', 'david@gmail.com'),
+    (6, 'Anjali', 'Koper', 38, 600000, 'Lawyer', 'anjali@gmail.com'),
+    (7, 'Anita, 'Dadar', 41, 700000, 'IT Consultant', 'anita@gmail.com'),
+    (8, 'Sonia, 'Santacruz', 36, 800000, 'Architect', 'sonia@gmail.com'),
+    (9, 'Madhav', 'Dadar', 43, 750000, 'Entrepreneur', 'madhav@gmail.com'),
+    (10, 'Pratham More', 'Sonapur', 37, 650000, 'Marketing Specialist', 'pratham@gmail.com'),
+    (11, 'Captain america', 'new york', 105, 9000000, 'Avengers', 'captain@gmail.com'),
+    (12, 'antman’, 'Jacksonville', 34, 550000, 'Theif', 'antman@gmail.com'),
+    (13, 'rock Lee', 'Tokyo', 26, 750000, 'Ninja', 'lee@gmail.com'),
+    (14, 'Naruto', 'Hidden village', 30, 7000000, 'Hokage', 'naruto@gmail.com'),
+    (15, 'Minato', 'Hidden village', 25, 800000, 'Hokage', 'minato@gmail.com'),
+    (16, 'Gara', 'Sand Hidden Village', 26, 650000, 'Kazekage', 'gara@gmail.com'),
+    (17, 'Itachi', 'Leaf village', 35, 7500000, 'Rogue ninja', 'itachi@gmail.com'),
+    (18, 'Thor', 'Asgaurd', 1500, 60000000, 'God', 'thor@gmail.com'),
+    (19, 'john cena', 'Denver', 37, 8500000, 'Boxer', 'john@gmail.com'),
+    (20, 'King arther', 'Washington', 41, 5500000, 'King', 'king@gmail.com');
+
+select * from Parents;
+
+update Parents set email_id = 'NA' where p_id >= 1;
+
+select count(*) from Parents where annual_in > 10000
+
+select * from Parents where city in ('Ahmedabad','Delhi','Mumbai','Chennai','Banglore');
+
+select * from Parents where age >45 or annual_in > 5000;
+
+
+2.
+
+
+1)create table Company(company_Id int PRIMARY KEY,company_name varchar(255),company_city       varchar(255));
+   insert into Company (company_Id,company_name,company_city)
+	values (1,'Dominos','Los Angeles'),
+    (2,'Pizza Hut','San Francisco'),
+    (3,'Papa Joins','San Deigo'),
+    (4,'Ah Pizz','Fremont'),
+    (5,'Nino Pizza','Las Vegas'),
+    (6,'Pizzeria','Boston'),
+    (7,'Chunck e cheese','Chicago');
+
+2) create table Items(item_id int PRIMARY KEY, item_name varchar(255), units_sold int, company_Id int);
+
+insert into Items (item_id,item_name,units_sold,company_Id) values
+	(1,'Large Pizza',5,2),
+    (2,'Garlic Knots',6,3),
+    (3,'Large Pizza',3,3),
+    (4,'Medium Pizza',8,4),
+    (5,'Breadsticks',7,1),
+    (6,'Medium Pizza',11,1),
+    (7,'Small Pizza',9,6),
+    (8,'Small Pizza',6,7);
+    
+3) select c.company_name,c.company_city,i.item_name,i.units_sold from Company c JOIN Items i where c.company_Id = i.company_Id;
